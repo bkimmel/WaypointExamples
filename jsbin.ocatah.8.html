@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/ocatah/8/edit
+-->
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arbutus+Slab|Rokkitt|Open+Sans:400,700|Volkhov|Lancelot' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <meta name="description" content="[qunit_testing]" />
+<link href="http://code.jquery.com/qunit/qunit-git.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/qunit/qunit-git.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.2/waypoints.min.js">
+  </script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+
+<style id="jsbin-css">
+html {
+  height: 99%;
+}
+
+body {
+  width: 100%;
+  margin: 0px;
+  height: 100%;
+}
+
+xdiv {
+  background-color: rgba(0,0,200,0.01);
+  width: 100%;
+  height: 10%;
+  border-top: 3px solid rgba(0,0,200,0.15);
+  border-bottom: 3px solid rgba(0,0,200,0.15);
+  box-shadow: 0px 2px 0px 0px rgba(0,0,200,0.45), 0px -2px 0px 0px rgba(0,0,200,0.45), inset 0px -5px 0px -3px rgba(0,0,200,0.45), inset 0px 5px 0px -3px rgba(0,0,200,0.45);
+  margin-bottom: 2px;
+}
+
+div {
+ 
+  width: 100%;
+  
+}
+
+.secone_large {
+  background-color: rgba(120,80,150,0.31);
+  position: fixed;
+  height: 80%;
+  top: 0px;
+  transition: height 1s;
+  -webkit-transition: height 1s;
+}
+
+.secone_small {
+  background-color: rgba(120,80,150,0.31);
+  position: fixed;
+  height: 10%;
+  top: 0px;
+  transition: height 1s;
+  -webkit-transition: height 1s;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 2%;
+}
+
+#dougtitle {
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  opacity: .12;
+  -webkit-animation: fadeintitle 1s ease 0s 1 forwards;
+  
+   font-family: 'Lancelot', cursive;
+  
+  font-family: 'Volkhov', serif;
+  font-family: 'Alegreya SC', serif;
+  
+  font-family: 'Lancelot', cursive;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 23.5px;
+  margin-top: 5px;
+  padding: 5px 0;
+  background-color: rgba(255,255,255, .1);
+}
+
+@-webkit-keyframes fadeintitle { from { opacity: .3; } to { opacity: .99; }  }
+
+@-webkit-keyframes fadeinsubtitle { from { opacity: .0; } to { opacity: .99; }  }
+
+#dougsub {
+  opacity: 0;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: fadeinsubtitle 3s ease 0.5s 1 forwards;
+  font-family: 'Lancelot', cursive;
+   background-color: rgba(255,255,255, .2);
+  
+  
+}
+
+#dtfn {
+  //text-decoration: underline;
+}
+
+#dougimg1 {
+  float: left;
+  margin-right: 10px;
+  margin-top: 4px;
+  border-top-left-radius: 20px;
+  -webkit-box-shadow: 0px 18px 30px -7px rgba(10,1,10,1);
+}
+
+#dougmainstripe {
+  opacity: .12;
+  width: 100%;
+  min-height: 210px;
+  -webkit-animation: fadeintitle 2s ease 0s 1 forwards;
+  
+}
+
+#dougmain {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-family: 'Alegreya SC', serif;
+  font-size: 20px;
+}
+
+
+
+#dougaftermainstripe {
+  clear: left;
+  width: 100%;
+}
+
+#aftermaincontent {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -1%;
+  color: white;
+  font-family: 'Alegreya SC', serif;
+  font-size: 20px;
+}
+
+#mclist {
+  list-style-type: disc;
+}
+
+.amcspan {
+  height: 100px;
+  width: 200px;
+  border: 1px solid white;
+  margin-right: 4px;
+  display: inline-block;
+  position: relative;
+  top: -60px;
+}
+
+#dougfooterstripe {
+  width: 100%;
+  background-color: rgba(255,255,255, .2);
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  clear: both;
+}
+
+#dougfootercontent {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-family: 'Alegreya SC', serif;
+  font-size: 20px;
+}
+
+.secone_small *{
+  display: none;
+ -webkit-opacity: .99;
+  -webkit-transition: opacity 3s;
+}
+
+.secone_small:after {
+  content: " Lorem Ipsum ";
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  text-decoration: underline;
+  font-family: 'Lancelot', cursive;
+}
+
+.sectwo_large {
+  background-color: rgba(20,80,150,0.31);
+  height: 80%;
+  position: fixed;
+  top: 10%;
+  transition: height 1s, top 1s;
+  -webkit-transition: height 1s, top 1s, background-color 1s;
+}
+
+.sectwo_small {
+  
+  background-color: rgba(220,230,250,0.39);
+  height: 8%;
+  position: fixed;
+  top: 80%;
+  transition: height 1s, top 1s;
+  -webkit-transition: height 1s, top 1s, background-color 1s;
+  text-align: center;
+  padding-top: 3%;
+  line-height: 100%;
+}
+
+.sectwo_small_top {
+  background-color: rgba(220,230,250,0.39);
+  height: 8%;
+  position: fixed;
+  top: 10%;
+  transition: height 1s, top 1s;
+  -webkit-transition: height 1s, top 1s, background-color 1s;
+  text-align: center;
+  padding-top: 3%;
+}
+
+.sectwo_small:after, .sectwo_small_top:after {
+  content: " LOREM IPSUM dolor sit amet. ";
+  color: black;
+  text-align: center;
+ 
+}
+
+.secthree_large {
+  background-color: rgba(20,230,150,0.31);
+  height: 80%;
+  position: fixed;
+  top: 20%;
+}
+
+.secthree_small {
+  background-color: rgba(20,230,150,0.31);
+  height: 10%;
+  position: fixed;
+  top: 90%;
+}
+
+#waypoint1 {
+  height: 200%;
+  position: static;
+  margin-bottom: 3px;
+}
+
+#waypoint2 {
+  height: 200%;
+  position: static;
+  margin-bottom: 3px;
+}
+
+#waypoint3 {
+  height: 200%;
+  position: static;
+}
+</style>
+</head>
+<body>
+  <div id="waypoint1" class="waypointdiv">
+  </div>
+  <div id="waypoint2" class="waypointdiv">
+  </div>
+  <div id="waypoint3" class="waypointdiv">
+  </div>
+  
+  
+  
+  
+  <div id="secone" class="secone_large">
+    <div id="dougtitle"><span id="dtfn">Doug</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;Thornell</div>
+    <div id="dougsub">A record of success in strategic communications.</div>
+    <div id="dougmainstripe">
+    <div id="dougmain">
+      <img id="dougimg1" src="http://lorempixel.com/200/200/business/2/pictureofdoug/"/>
+      <span>
+        Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  skdfhksahfdklsafd. sfjkdlhksalfhdjkslad. sfjkdlkljsaf.Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  sd. sfjkdlkljsaf. Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  skdfhksahfdklsafd. sfjkdlhksalfhdjkslad. sfjkdlkljsaf.Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  sd. sfjkdlkljsaf.Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  skdfhksahfdklsafd. sfjkdlhksalfhdjkslad. sfjkdlkljsaf.Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  sd. sfjkdlkljsaf.Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  skdfhksahfdklsafd. sfjkdlhksalfhdjkslad. sfjkdlkljsaf.Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  sd. sfjkdlkljsaf.Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  skdfhksahfdklsafd. sfjkdlhksalfhdjkslad. sfjkdlkljsaf.Lorem Ipsum blablah. Ipsum Lorem ajksdkad ksadfjskfjdsdfsdfj. sdfsljdfjklsdf.  sd. sfjkdlkljsaf.
+      </span>
+    </div>
+    </div>
+    <div id="dougaftermainstripe">
+      <div id="aftermaincontent">
+       <ol id="mclist">
+         <li>Lorem</li>
+         <li>Ipsum</li>
+         <li>Lorem</li>
+        </ol>
+        <span class="amcspan">
+          <div>
+            ABC
+          </div>
+          <div>
+            DEF
+          </div>
+        </span>
+        <span class="amcspan">
+        </span>
+        <span class="amcspan">
+        </span>
+        <span class="amcspan">
+        </span>
+      </div>
+    </div>
+    <div id="dougfooterstripe">
+      <div id="dougfootercontent">
+        Footer
+      </div>
+    </div>
+  </div>
+  <div id="sectwo" class="sectwo_small">
+    
+  </div>
+  <div id="secthree" class="secthree_small">
+    
+  </div>
+<script>
+var waypointmap = {
+  "waypoint1": {
+    "up": function() {
+      
+    },
+    "down": function() {
+      console.log("1 down");
+    }
+  },
+  "waypoint2": {
+    "up": function() {
+      console.log("2 up");
+      $("#secone").attr("class", "secone_large");
+      $("#sectwo").attr("class", "sectwo_small");
+    },
+    "down": function() {
+      console.log("2 down");
+      $("#secone").attr("class", "secone_small");
+      $("#sectwo").attr("class", "sectwo_large");
+      //$("#secone").removeClass("secone_large");
+    }
+  },
+  "waypoint3": {
+    "up": function() {
+      console.log("3 up");
+      $("#sectwo").attr("class", "sectwo_large");
+      $("#secthree").attr("class", "secthree_small");
+    },
+    "down": function() {
+      console.log("3 down");
+      $("#sectwo").attr("class", "sectwo_small_top");
+      $("#secthree").attr("class", "secthree_large");
+    }
+  }
+};
+
+$('.waypointdiv').each(function(i, e){
+  $this = $(this);
+  
+  (function($this) {
+  $this.waypoint(function(direction){
+    console.log($this.attr('id') + " - " + direction);
+    if (waypointmap[$this.attr('id')] && waypointmap[$this.attr('id')][direction])
+    {
+      waypointmap[$this.attr('id')][direction]();
+    }
+  }, { offset: '100%' });
+  })($this);
+  
+});
+</script>
+</body>
+</html>
+  
